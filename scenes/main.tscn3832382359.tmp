@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://rljblbakowu6"]
+
+[ext_resource type="PackedScene" uid="uid://cww367yxklom8" path="res://scenes/player.tscn" id="1_o5qli"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_o5qli"]
+radius = 5.0
+height = 10.0
+
+[node name="Node3D" type="Node3D" unique_id=1801876279]
+
+[node name="Player" parent="." unique_id=876710542 node_paths=PackedStringArray("red", "white") instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4779124, 0)
+red = NodePath("../red")
+white = NodePath("../white")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=639042452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49499512, -0.4543457, -0.71591187)
+use_collision = true
+size = Vector3(17.235107, 0.091308594, 16.798767)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1118936296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49499512, 1.1783752, -9.0411415)
+use_collision = true
+size = Vector3(17.235107, 3.3567505, 0.1483078)
+
+[node name="crosshair" type="MeshInstance2D" parent="." unique_id=1221945456]
+modulate = Color(1, 1, 1, 0.23529412)
+position = Vector2(576, 324)
+mesh = SubResource("SphereMesh_o5qli")
+
+[node name="red" type="ColorRect" parent="." unique_id=1712643580]
+offset_left = 551.0
+offset_top = 341.0
+offset_right = 601.0
+offset_bottom = 347.0
+color = Color(1, 0, 0, 1)
+
+[node name="white" type="ColorRect" parent="." unique_id=1050420826]
+offset_left = 551.0
+offset_top = 341.0
+offset_right = 601.0
+offset_bottom = 347.0
